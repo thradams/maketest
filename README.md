@@ -19,8 +19,7 @@ file1.c
 
 ```cpp
 #ifdef TEST
-void MyTestCase(void)
-{
+void MyTestCase(void) {
 }
 #endif
 ```
@@ -28,8 +27,7 @@ void MyTestCase(void)
 file2.c
 ```cpp
 #ifdef TEST
-void MyTestCase2(void)
-{
+void MyTestCase2(void) {
 }
 #endif
 ```
