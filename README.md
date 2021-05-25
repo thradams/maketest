@@ -7,6 +7,12 @@ It generates an ouputfile tha calls all test functions.
 ```
 maketest output.c file1.c file2.c ....
 ```
+or it also can be used with VC++ projects.
+
+```
+maketestvc project.vcxproj output.c
+```
+
 Sample:
 
 file1.c
@@ -81,6 +87,9 @@ I define my ASSERT at unittest.h
                       printf(" '%s' \n", #B); \
                   }
 ```
+
+... then I include inside ifdef TEST block
+
 ```cpp
 /*
    Normal code goes here...
@@ -95,7 +104,7 @@ void MyTestCase2(void)
 #endif
 ```
 
-My program:
+In my main() function:
 
 ```
 #ifdef TEST
