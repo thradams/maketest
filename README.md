@@ -64,17 +64,17 @@ void DoUnitTests(void)
 #endif
 ```
 
-How Do I use it?
+### How Do I use it?
 
 I define my ASSERT at unittest.h
 
 ```cpp
 #pragma once
-
 #include <stdio.h>
-#include "terminal.h" /*colors*/
 
-#define RESET ESC "[0m"
+#define GREEN "\x1b[32m"
+#define RED   "\x1b[31;1m"
+#define RESET "\x1b[0m"
 
 #define ASSERT(B) printf("%*d : ",  4, __LINE__ ); \
                   if (!(B)) {\
