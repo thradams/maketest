@@ -106,7 +106,7 @@ void MyTestCase2(void)
 
 In my main() function:
 
-```
+```cpp
 #ifdef TEST
 void DoUnitTests(void);//lint !e2701
 #endif
