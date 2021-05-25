@@ -117,3 +117,24 @@ int main(int argc, char** argv)
 }
 ```
 
+
+Tip: Enabling VT100 on windows
+```cpp
+#ifdef _WIN32
+#include <Windows.h>
+int EnableVTMode(void)
+{
+    DWORD dwMode = 0;
+    HANDLE hOut = GetStdHandle(STD_OUTPUT_HANDLE);
+    if ((hOut = GetStdHandle(STD_OUTPUT_HANDLE) ) != INVALID_HANDLE_VALUE && 
+        GetConsoleMode(hOut, &dwMode) != 0 &&
+        SetConsoleMode(hOut, dwMode |= ENABLE_VIRTUAL_TERMINAL_PROCESSING) != 0 &&
+        SetConsoleOutputCP(CP_UTF8) != 0)
+    {
+        return 1;//ok
+    }
+    return 0;//error
+}
+#endif
+```
+
